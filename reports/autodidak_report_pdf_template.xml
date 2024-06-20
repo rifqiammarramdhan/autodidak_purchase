@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+       <record id="menu_report_pdf_invoice" model="ir.actions.report">
+            <field name="name">Product Report</field>
+            <field name="model">autodidak.purchase</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">autodidak_purchase.report_data_autodidak_purchase_id</field>
+            <field name="report_file">autodidak_purchase.report_data_autodidak_purchase_id</field>
+            <field name="print_report_name">'Product Report'</field>
+            <field name="binding_model_id" ref="autodidak_purchase.model_autodidak_purchase"/>
+            <field name="binding_type">report</field>
+        </record>
+
+    <template id="report_data_autodidak_purchase_id">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+            <!-- Header Invoice --> 
+             <div style="">
+                <table width="100%">
+                    <tr>
+                        <td style="padding:0px;" width="50%"><h4 style="color:grey;"><span t-field="o.name"/></h4></td>
+                        <td style="padding:0px; text-align:right;"><h4 style="color:grey;"><span t-field="o.tanggal"/></h4></td>
+                    </tr>
+                </table> 
+              </div>
+                <!-- Body -->
+                <style>
+                    table, tr, td {
+                        border: 1px solid black;
+                        border-collapse: collapse;
+
+                    }
+                </style>
+                <table width="100%">
+                    <tr>
+                        <td width="35%">Produk</td>
+                        <td width="10%">Qty</td>
+                        <td width="10%">Satuan</td>
+                        <td width="20%">Harga</td>
+                        <td width="25%">Subtotal</td>
+                    </tr>
+                    <t t-foreach="o.autodidak_purchase_ids" t-as="line">
+                        <tr>
+                            <td width="35%"><span t-field="line.product_id.name"/></td>
+                            <td width="10%"><span t-field="line.quantity"/></td>
+                            <td width="10%"><span t-field="line.uom_id.name"/></td>
+                            <td width="20%"><span t-field="line.price"/></td>
+                            <td width="25%"><span t-field="line.subtotal"/></td>
+                        </tr>
+                    </t>
+                </table>
+            </t>
+        </t>
+    </template>
+</odoo>

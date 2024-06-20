@@ -67,3 +67,5 @@ class autodidak_purchase_report_wizard(models.TransientModel):
     start_date = fields.Date(string='Start Date')
     end_date = fields.Date(string='End Date')
 
+    
+

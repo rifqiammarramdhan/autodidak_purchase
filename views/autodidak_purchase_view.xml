@@ -18,7 +18,8 @@
             <form>
                 <header>
                     <button type="object" name="funct_approved" string="Approve" invisible="status != 'draft'" class="oe_highlight"/>
-                    <button type="object" name="funct_set_to_done" string="Set to Done" invisible="status != 'approve'" class="oe_highlight"/>
+                    <button type="object" name="funct_set_to_done" string="Set to Done" invisible="status != 'approve'" class="oe_highlight"/>                    
+                     <!-- <button name="%(autodidak_purchase.report_data_autodidak_purchase_id)d" string="Print PDF" type="action" class="oe_highlight"/> -->
                     <field name="status" widget="statusbar"/>
                 </header>
                 <sheet>
@@ -107,8 +108,8 @@
                     </group>
                 </sheet>
                 <footer>
-<!--                    <button type="object" string="Submit" name="" class="btn-primary"/>-->
-                    <button string="cancel" class="btn-default" special="cancel"/>
+                   <!-- <button type="object" string="Submit" name="" class="btn-primary"/> -->
+                   <button string="cancel" class="btn-default" special="cancel"/>
                 </footer>
             </form>
         </field>

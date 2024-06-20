@@ -3,7 +3,7 @@
     <menuitem
         id="parent_autodidak_purchase_id"
         name="Pembelian"
-        sequence="10"
+        sequence="100"
     />
     <menuitem
         id="child_autodidak_purchase_id"

@@ -13,6 +13,9 @@
         'views/autodidak_purchase_action.xml',
         'views/autodidak_purchase_menuitem.xml',
         'views/autodidak_purchase_sequence.xml',
+        # 'reports/autodidak_report_pdf.xml',
+        'reports/autodidak_report_pdf_template.xml',
+        
     ],
     'installable' : True,
     'license' : 'OEEL-1'
