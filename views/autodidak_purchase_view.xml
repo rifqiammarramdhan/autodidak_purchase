@@ -19,7 +19,7 @@
                 <header>
                     <button type="object" name="funct_approved" string="Approve" invisible="status != 'draft'" class="oe_highlight"/>
                     <button type="object" name="funct_set_to_done" string="Set to Done" invisible="status != 'approve'" class="oe_highlight"/>                    
-                     <!-- <button name="%(autodidak_purchase.report_data_autodidak_purchase_id)d" string="Print PDF" type="action" class="oe_highlight"/> -->
+                    <button type="object" name="get_excel_report" string="Print Excel"/>
                     <field name="status" widget="statusbar"/>
                 </header>
                 <sheet>

@@ -5,6 +5,14 @@ from odoo.exceptions import ValidationError
 class autodidak_purchase(models.Model):
     _name = 'autodidak.purchase'
 
+    # Excel reporting
+    def get_excel_report(self):
+        return {
+            'type' : 'ir.actions.act_url',
+            'url' : '/autodidak_purchase/autodidak_purchase_report_excel/%s' % (self.id),
+            'target' : 'new',
+        }
+
     def funct_approved(self):
         if self.status == 'draft':
             if self.name == 'New':
